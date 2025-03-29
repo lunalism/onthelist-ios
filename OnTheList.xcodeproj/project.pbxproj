@@ -13,6 +13,7 @@
 		1E7C67902D969FE8000CB0CC /* Storage in Frameworks */ = {isa = PBXBuildFile; productRef = 1E7C678F2D969FE8000CB0CC /* Storage */; };
 		1E7C67922D969FE8000CB0CC /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = 1E7C67912D969FE8000CB0CC /* Supabase */; };
 		1EA471F82D97DEC30074FCFB /* Font+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA471F72D97DEB70074FCFB /* Font+Extension.swift */; };
+		1EA472152D97F2930074FCFB /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA472142D97F28E0074FCFB /* AuthManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		1E19C9B72D969F7D00CDE3FC /* OnTheListTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OnTheListTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E19C9C12D969F7D00CDE3FC /* OnTheListUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OnTheListUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EA471F72D97DEB70074FCFB /* Font+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Extension.swift"; sourceTree = "<group>"; };
+		1EA472142D97F28E0074FCFB /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -118,6 +120,7 @@
 		1E073D0C2D9704E800363E35 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				1EA472142D97F28E0074FCFB /* AuthManager.swift */,
 				1E073D0D2D9704F300363E35 /* GradientColors.swift */,
 			);
 			path = Utils;
@@ -126,7 +129,7 @@
 		1E19C99E2D969F7C00CDE3FC = {
 			isa = PBXGroup;
 			children = (
-				1EA471F72D97DEB70074FCFB /* Font+Extension.swift */,
+				1EA472232D97F6000074FCFB /* Extensions */,
 				1E073D0C2D9704E800363E35 /* Utils */,
 				1E19C9A92D969F7C00CDE3FC /* OnTheList */,
 				1E19C9BA2D969F7D00CDE3FC /* OnTheListTests */,
@@ -146,6 +149,14 @@
 				1E19C9C12D969F7D00CDE3FC /* OnTheListUITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		1EA472232D97F6000074FCFB /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1EA471F72D97DEB70074FCFB /* Font+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -302,6 +313,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1EA472152D97F2930074FCFB /* AuthManager.swift in Sources */,
 				1EA471F82D97DEC30074FCFB /* Font+Extension.swift in Sources */,
 				1E073D0F2D97061A00363E35 /* GradientColors.swift in Sources */,
 			);

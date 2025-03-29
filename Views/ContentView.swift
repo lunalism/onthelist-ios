@@ -4,7 +4,7 @@
 //
 //  Created by Byungjin (Chris) Choi on 3/28/25.
 //
-
+// File Path: Views/ContentView.swift
 import SwiftUI
 
 extension Color {
@@ -33,10 +33,14 @@ extension Color {
     }
 }
 
+// 메인 화면 뷰 (검색 탭)
 struct ContentView: View {
-    @State private var searchText = ""
-    @State private var useGradientBackground = true
-    @FocusState private var isTextFieldFocused: Bool
+    @Binding var isLoggedIn: Bool // 로그인 상태를 관리하는 바인딩 변수
+    @State private var searchText: String = "" // 검색어 상태
+    @State private var useGradientBackground: Bool = true // 배경 그라데이션 상태
+    @State private var showLoginView: Bool = false // 로그인 화면 표시 여부
+    @FocusState private var isTextFieldFocused: Bool // 텍스트 필드 포커스 상태
+    private let auth = useAuth() // useAuth 훅 인스턴스
 
     private let mainImages = ["main01", "main02", "main03", "main04", "main05", "main06", "main07", "main08"]
     private let gradientColors: [Color] = GradientColors.randomGradient()
@@ -85,11 +89,16 @@ struct ContentView: View {
                         }
                     }
                 }
+                // 로그인 화면 표시 (모달로 표시)
+                .sheet(isPresented: $showLoginView) {
+                    LoginView(isLoggedIn: $isLoggedIn)
+                }
             }
         }
     }
 }
 
+// 검색 입력창 뷰
 struct SearchInputView: View {
     @Binding var searchText: String
     @FocusState var isTextFieldFocused: Bool
@@ -97,7 +106,6 @@ struct SearchInputView: View {
     var body: some View {
         HStack {
             TextField("어느 세계의 리뷰를 탐험하실건가요?", text: $searchText)
-                .font(.pretendard(size: 14, weight: .regular))
                 .foregroundColor(.black)
                 .padding(.vertical, 8)
                 .padding(.leading, 15)
@@ -139,6 +147,7 @@ struct SearchInputView: View {
     }
 }
 
+// 메인 이미지 카드 뷰
 struct MainImageCard: View {
     var body: some View {
         ZStack(alignment: .bottomLeading) {
@@ -155,12 +164,12 @@ struct MainImageCard: View {
 
             VStack(alignment: .leading, spacing: 4) {
                 Text("On The List에서 추천하는 최고의 한식당")
-                    .font(.pretendard(size: 16, weight: .heavy))
+                    .font(.pretendard(size: 16, weight: .bold))
                     .foregroundColor(.white)
 
                 HStack(spacing: 5) {
                     Text("목록 보기")
-                        .font(.pretendard(size: 14, weight: .medium))
+                        .font(.pretendard(size: 14, weight: .regular))
                         .foregroundColor(.white)
 
                     Image(systemName: "chevron.right")
@@ -170,8 +179,8 @@ struct MainImageCard: View {
             }
             .padding(.horizontal, 10)
             .padding(.vertical, 8)
-            .background(Color.black.opacity(0.5)) // 검은색 반투명 배경 추가
-            .cornerRadius(8) // 모서리 둥글게
+            .background(Color.black.opacity(0.5))
+            .cornerRadius(8)
             .padding(.leading, 15)
             .padding(.bottom, 15)
         }
@@ -179,6 +188,7 @@ struct MainImageCard: View {
     }
 }
 
+// 이미지 목록 뷰
 struct ImageListView: View {
     let mainImages: [String]
 
@@ -204,8 +214,9 @@ struct ImageListView: View {
     }
 }
 
+// 프리뷰 제공자
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(isLoggedIn: .constant(false))
     }
 }
