@@ -41,7 +41,7 @@ struct ReviewItemView: View {
             // 평점
             HStack {
                 ForEach(0..<5) { i in
-                    Star(size: 16, fill: i < Int(review.rating) ? Color.orange : Color.gray)
+                    //Star(size: 16, fill: i < Int(review.rating) ? Color.orange : Color.gray)
                 }
                 Text(review.rating.description)
                     .font(.caption)
