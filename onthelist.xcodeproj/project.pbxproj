@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		2E25308B2DB3187900A420E0 /* NMapsMap in Frameworks */ = {isa = PBXBuildFile; productRef = 2E25308A2DB3187900A420E0 /* NMapsMap */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		2E25306D2DB317BF00A420E0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -29,9 +33,22 @@
 		2E2530762DB317BF00A420E0 /* onthelistUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = onthelistUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		2E25308D2DB31A4D00A420E0 /* Exceptions for "onthelist" folder in "onthelist" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 2E25305E2DB317BD00A420E0 /* onthelist */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		2E2530612DB317BE00A420E0 /* onthelist */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				2E25308D2DB31A4D00A420E0 /* Exceptions for "onthelist" folder in "onthelist" target */,
+			);
 			path = onthelist;
 			sourceTree = "<group>";
 		};
@@ -52,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E25308B2DB3187900A420E0 /* NMapsMap in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,6 +130,7 @@
 			);
 			name = onthelist;
 			packageProductDependencies = (
+				2E25308A2DB3187900A420E0 /* NMapsMap */,
 			);
 			productName = onthelist;
 			productReference = 2E25305F2DB317BE00A420E0 /* onthelist.app */;
@@ -195,6 +214,9 @@
 			);
 			mainGroup = 2E2530562DB317BD00A420E0;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				2E2530892DB3187900A420E0 /* XCRemoteSwiftPackageReference "SPM-NMapsMap" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 2E2530602DB317BE00A420E0 /* Products */;
 			projectDirPath = "";
@@ -397,6 +419,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = onthelist/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -424,6 +447,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = onthelist/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -550,6 +574,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2E2530892DB3187900A420E0 /* XCRemoteSwiftPackageReference "SPM-NMapsMap" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/navermaps/SPM-NMapsMap";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.21.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2E25308A2DB3187900A420E0 /* NMapsMap */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2E2530892DB3187900A420E0 /* XCRemoteSwiftPackageReference "SPM-NMapsMap" */;
+			productName = NMapsMap;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2E2530572DB317BD00A420E0 /* Project object */;
 }
