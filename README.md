@@ -22,6 +22,7 @@
 git clone https://github.com/your-username/onthelist.git
 cd onthelist
 open onthelist.xcodeproj
+```
 
 ---
 
