@@ -25,7 +25,7 @@ open onthelist.xcodeproj
 
 ---
 
-## ✅ 현재 구현 완료
+**## ✅ 현재 구현 완료**
 
 - [x] **SwiftUI 프로젝트 구성**  
   - 최신 Xcode 기반 SwiftUI 앱 초기화  
