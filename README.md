@@ -22,8 +22,9 @@
 git clone https://github.com/your-username/onthelist.git
 cd onthelist
 open onthelist.xcodeproj
+```
 
-
+---
 
 ## ✅ 현재 구현 완료
 
@@ -42,3 +43,31 @@ open onthelist.xcodeproj
 - [x] **파일 구조 분리 시작**
   - `Assets`, `Info.plist`, `ContentView.swift` 구조 확인
   - 향후 다국어, 검색기능, Supabase 연동 계획 수립
+
+---
+
+## 🎯 다음 목표
+
+- [ ] **지도 스타일 커스터마이징**
+  - 심볼 크기, 밝기, 야간모드 등 `NMFMapView` 설정 적용
+  - 앱 테마와 일관된 지도 UI 구성
+
+- [ ] **사용자 현재 위치 표시**
+  - 위치 권한 요청 (`NSLocationWhenInUseUsageDescription`)
+  - 지도에 현재 위치 오버레이 표시
+
+- [ ] **지도 화면 오버레이 개발**
+  - 검색창 및 UI 요소를 지도 위에 자연스럽게 배치
+  - SwiftUI + UIKit 조합으로 완성도 높은 UX 구현
+
+- [ ] **Supabase 연동 준비**
+  - 위치 기반 장소 목록 조회 API 연결
+  - 지도와 장소 데이터 연동 구조 설계
+
+- [ ] **리팩토링 및 구조화**
+  - `ViewModel`, `Service`, `View` 디렉토리 정리
+  - 지속적인 모듈화와 테스트 가능 구조로 개선
+
+- [ ] **README 업데이트**
+  - 개발 목표, 설치 방법, 기술 스택 등 문서화
+  - 스크린샷 및 GIF 추가로 가독성 향상
