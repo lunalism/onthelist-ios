@@ -28,20 +28,20 @@ open onthelist.xcodeproj
 
 ## ✅ 현재 구현 완료
 
-- [x] **SwiftUI 프로젝트 구성**  
-  - 최신 Xcode 기반 SwiftUI 앱 초기화  
+- [x] **SwiftUI 프로젝트 구성**
+  - 최신 Xcode 기반 SwiftUI 앱 초기화
   - SPM으로 의존성 관리 설정 완료
 
-- [x] **Naver Maps iOS SDK 연동 (SPM)**  
-  - `NMapsMap` 및 `NMapsGeometry` 패키지 추가  
+- [x] **Naver Maps iOS SDK 연동 (SPM)**
+  - `NMapsMap` 및 `NMapsGeometry` 패키지 추가
   - Info.plist에 `NMFNcpKeyId` 등록하여 Client ID 적용
 
-- [x] **지도 초기화 성공**  
-  - 실제 지도 타일 표시 확인  
+- [x] **지도 초기화 성공**
+  - 실제 지도 타일 표시 확인
   - SwiftUI에서 `UIViewRepresentable`로 MapView 불러오기
 
-- [x] **앱 구조 분리 시작**  
-  - `Assets`, `Info.plist`, `ContentView.swift` 구조 확인  
+- [x] **파일 구조 분리 시작**
+  - `Assets`, `Info.plist`, `ContentView.swift` 구조 확인
   - 향후 다국어, 검색기능, Supabase 연동 계획 수립
 
 ---
