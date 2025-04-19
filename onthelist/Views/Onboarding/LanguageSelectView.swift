@@ -17,7 +17,7 @@ struct LanguageSelectView: View {
 
             VStack(spacing: 32) {
                 // MARK: - 타이틀
-                Text("언어를 선택해주세요")
+                Text("language.title")
                     .font(.system(size: 24, weight: .bold))
                     .foregroundColor(.white)
 
@@ -25,7 +25,7 @@ struct LanguageSelectView: View {
                 Button(action: {
                     selectLanguage("ko")
                 }) {
-                    Text("🇰🇷 한국어")
+                    Text("language.korean")
                         .font(.system(size: 18, weight: .medium))
                         .foregroundColor(.white)
                         .frame(maxWidth: .infinity)
@@ -38,7 +38,7 @@ struct LanguageSelectView: View {
                 Button(action: {
                     selectLanguage("en")
                 }) {
-                    Text("🇺🇸 English")
+                    Text("language.english")
                         .font(.system(size: 18, weight: .medium))
                         .foregroundColor(.white)
                         .frame(maxWidth: .infinity)

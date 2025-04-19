@@ -11,7 +11,7 @@ import SwiftUI
 
 struct CategoryView: View {
     var body: some View {
-        Text("카테고리 화면입니다")
+        Text("category.screen.title")
             .font(.title)
     }
 }

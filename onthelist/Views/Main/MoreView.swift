@@ -11,7 +11,7 @@ import SwiftUI
 
 struct MoreView: View {
     var body: some View {
-        Text("더보기 화면입니다")
+        Text("more.screen.title")
             .font(.title)
     }
 }
