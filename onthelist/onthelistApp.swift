@@ -22,7 +22,7 @@ struct onthelistApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            SplashView()
         }
     }
 }
