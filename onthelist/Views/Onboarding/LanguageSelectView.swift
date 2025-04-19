@@ -49,7 +49,7 @@ struct LanguageSelectView: View {
             }
             .padding(.horizontal, 32)
             .fullScreenCover(isPresented: $navigate) {
-                SearchView() // 메인 화면으로 이동
+                MainTabView() // 메인 화면으로 이동
             }
         }
     }
