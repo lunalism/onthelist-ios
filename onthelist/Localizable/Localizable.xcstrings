@@ -368,7 +368,11 @@
         }
       }
     },
+    "loading_location" : {
+
+    },
     "loading.user.location" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
