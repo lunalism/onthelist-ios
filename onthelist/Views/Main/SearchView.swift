@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  SearchView.swift
 //  onthelist
 //
 //  Created by Byungjin (Chris) Choi on 4/19/25.
@@ -9,6 +9,7 @@ import SwiftUI
 import NMapsMap
 import CoreLocation
 
+// MARK: - 네이버 지도 UIView 래퍼
 struct NaverMapView: UIViewRepresentable {
     let coordinate: CLLocationCoordinate2D
 
@@ -33,44 +34,51 @@ struct NaverMapView: UIViewRepresentable {
     }
 }
 
+// MARK: - 메인 검색 화면
 struct SearchView: View {
     @StateObject private var locationManager = LocationManager()
     @State private var searchText: String = ""
 
     var body: some View {
         ZStack {
+            // 지도 뷰
             if let userLocation = locationManager.userLocation {
                 NaverMapView(coordinate: userLocation)
                     .ignoresSafeArea(.all, edges: .top)
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .background(Color.white)
             } else {
-                ProgressView("사용자 위치를 불러오는 중...")
+                ProgressView("loading.user.location")
             }
-            
-            // 2. 상단 검색창
+
+            // 상단 검색창
             VStack {
-                HStack {
+                HStack(spacing: 8) {
                     Image(systemName: "magnifyingglass")
                         .foregroundColor(.gray)
-                    TextField("어떤 리뷰를 찾고 계신가요?", text: $searchText)
-                        .foregroundColor(.primary)
-                        .autocapitalization(.none)
+                    TextField(
+                        LocalizedStringKey("search.placeholder"), // ✅ 시스템 언어에 따라 변환됨
+                        text: $searchText
+                    )
+                    .font(.system(size:14))
+                    .foregroundColor(.primary)
+                    .autocapitalization(.none)
                 }
-                .padding()
-                .padding(.horizontal, 6)
-                .padding(.vertical, -6)
+                .padding(.horizontal, 10)
+                .padding(.vertical, 10)
                 .background(Color.white)
-                .cornerRadius(16)
+                .cornerRadius(14)
                 .padding(.horizontal, 10)
                 .shadow(radius: 3)
 
-                Spacer() // 화면 아래로 밀기 위한 spacer
+                Spacer() // 아래로 밀기
             }
-            .padding(.top, 8) // 상단 여백 (노치 고려)
+            .padding(.top, 10) // 노치 대응
         }
+        .ignoresSafeArea(.keyboard) // 키보드 올라올 때 화면 뒤로 안 밀리게
     }
 }
+
 #Preview {
     SearchView()
 }

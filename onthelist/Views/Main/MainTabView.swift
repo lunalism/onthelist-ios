@@ -7,57 +7,47 @@
 
 import SwiftUI
 
-// 탭 구분을 위한 enum
-enum Tab {
-    case search, recommend, category, collection, more
-}
-
+/// 메인 탭바를 구성하는 뷰
 struct MainTabView: View {
-    @State private var selectedTab: Tab = .search
+    @State private var selectedTab = 0
 
     var body: some View {
         TabView(selection: $selectedTab) {
-            // 1. 검색 탭
+            // 검색 탭
             SearchView()
                 .tabItem {
-                    Image(systemName: "magnifyingglass")
-                    Text("검색")
+                    Label(NSLocalizedString("tab_search", comment: "검색"), systemImage: "magnifyingglass")
                 }
-                .tag(Tab.search)
+                .tag(0)
 
-            // 2. 추천 탭
+            // 추천 탭
             RecommendView()
                 .tabItem {
-                    Image(systemName: "sparkles")
-                    Text("추천")
+                    Label(NSLocalizedString("tab_recommend", comment: "추천"), systemImage: "sparkles")
                 }
-                .tag(Tab.recommend)
+                .tag(1)
 
-            // 3. 카테고리 탭
+            // 카테고리 탭
             CategoryView()
                 .tabItem {
-                    Image(systemName: "square.grid.2x2")
-                    Text("카테고리")
+                    Label(NSLocalizedString("tab_category", comment: "카테고리"), systemImage: "square.grid.2x2")
                 }
-                .tag(Tab.category)
+                .tag(2)
 
-            // 4. 컬렉션 탭
+            // 컬렉션 탭
             CollectionView()
                 .tabItem {
-                    Image(systemName: "bookmark")
-                    Text("컬렉션")
+                    Label(NSLocalizedString("tab_collection", comment: "컬렉션"), systemImage: "bookmark")
                 }
-                .tag(Tab.collection)
+                .tag(3)
 
-            // 5. 더보기 탭
+            // 더보기 탭
             MoreView()
                 .tabItem {
-                    Image(systemName: "line.3.horizontal")
-                    Text("더보기")
+                    Label(NSLocalizedString("tab_more", comment: "더보기"), systemImage: "ellipsis")
                 }
-                .tag(Tab.more)
+                .tag(4)
         }
-        .accentColor(.blue) // 선택된 탭 아이콘 색상
     }
 }
 

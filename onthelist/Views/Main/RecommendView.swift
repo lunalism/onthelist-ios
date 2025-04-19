@@ -11,7 +11,7 @@ import SwiftUI
 
 struct RecommendView: View {
     var body: some View {
-        Text("추천 화면입니다")
+        Text("recommend.screen.title")
             .font(.title)
     }
 }

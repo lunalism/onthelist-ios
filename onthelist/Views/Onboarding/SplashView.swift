@@ -48,17 +48,17 @@ struct SplashView: View {
 
                 // MARK: - 서브타이틀
                 if showSubtitle {
-                    Text("세상에 없던 리뷰여행기")
+                    Text("splash.subtitle")
                         .font(.system(size: 20, weight: .light))
                         .foregroundColor(.white)
                         .transition(.opacity)
-                        .padding(.top, 16)
+                        .padding(.top, 10)
                 }
             }
         }
         // MARK: - 자동 네비게이션 트리거
         .fullScreenCover(isPresented: $navigate) {
-            LanguageSelectView() // 다음 화면으로 이동
+            MainTabView() // 다음 화면으로 이동
         }
     }
 }

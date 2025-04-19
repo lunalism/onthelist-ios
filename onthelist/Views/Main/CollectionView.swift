@@ -11,7 +11,7 @@ import SwiftUI
 
 struct CollectionView: View {
     var body: some View {
-        Text("컬렉션 화면입니다")
+        Text("collection.screen.title")
             .font(.title)
     }
 }
